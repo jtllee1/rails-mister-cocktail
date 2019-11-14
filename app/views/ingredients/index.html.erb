@@ -1,7 +1,9 @@
 <h1>Ingredients</h1>
 
-<% @ingredients.each do |ingredient| %>
-  <p><%= ingredient.name %></p>
-<% end %>
+<ul>
+  <% @ingredients.each do |ingredient| %>
+    <li><%= ingredient.name.capitalize %></li>
+  <% end %>
+</ul>
 
 <%= link_to 'Back to cocktails', cocktails_path %>

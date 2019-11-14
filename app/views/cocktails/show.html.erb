@@ -3,10 +3,9 @@
 <p>Ingredients:</p>
 <ul>
   <% @cocktail.doses.each do |dose| %>
-    <li><%= dose.ingredient.name.capitalize %> (<%= dose.description %>)</li>
+    <li><%= dose.ingredient.name.capitalize %> (<%= dose.description %>) <%= link_to "Remove", dose_path(dose), method: :delete, data: { confirm: 'Are you sure?' } %></li>
   <% end %>
 </ul>
-
 
 <%= link_to "Add dose", new_cocktail_dose_path(@cocktail) %>
 

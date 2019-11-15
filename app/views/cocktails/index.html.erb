@@ -1,11 +1,27 @@
-<h1>Cocktails</h1>
+<div class="container">
+  <h1>Cocktails</h1>
 
-<% @cocktails.each do |cocktail| %>
-  <p><%= link_to cocktail_path(cocktail) do  %>
-    <%= cocktail.name %>
-  <% end %></p>
-<% end %>
+  <% @cocktails.each do |cocktail| %>
+    <div class="card" style="width: 18rem;">
+      <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=986&q=80" class="card-img-top" alt="">
+      <div class="card-body">
+        <a href="<%= cocktail_path(cocktail) %>" class="btn btn-primary"><%= cocktail.name %></a>
+      </div>
+    </div>
+  <% end %>
 
-<%= link_to "List of ingredients", ingredients_path %>
+  <div class="card" style="width: 18rem;">
+    <img src="https://images.unsplash.com/photo-1552215147-ebe5751c9eba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class="card-img-top" id="new-card-img" alt="">
+    <div class="card-body">
+      <a href="<%= new_cocktail_path %>" class="btn btn-primary">Create a cocktail</a>
+    </div>
+  </div>
 
-<%= link_to "Create a cocktail", new_cocktail_path %>
+<div class="btn">
+  <%= link_to "List of ingredients", ingredients_path %>
+</div>
+<div class="btn">
+  <%= link_to "Create a cocktail", new_cocktail_path %>
+</div>
+
+</div>

@@ -1,5 +1,11 @@
 <h1><%= @cocktail.name %></h1>
 
+<% if @cocktail.photo.attached? %>
+  <img src="<%= url_for cocktail.photo %>" class="show-image" alt="">
+<% else %>
+  <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=986&q=80" class="show-image" alt="">
+<% end %>
+
 <p>Ingredients:</p>
 <ul>
   <% @cocktail.doses.each do |dose| %>
